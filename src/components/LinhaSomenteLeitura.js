@@ -21,7 +21,7 @@ const LinhaSomenteLeitura = ({
           />
         </button>
 
-        <button onClick={(event) => eventoClickMostrarModalDeletar(event, i)}>
+        <button onClick={(event) => eventoClickMostrarModalDeletar(event, listagem, i)}>
           <img
             src="https://cdn-icons-png.flaticon.com/512/2891/2891491.png"
             alt="botao Deletar"

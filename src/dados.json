@@ -1,30 +1,25 @@
 [
   {
-    "id": 1,
     "nomeCompleto": "Naomi Camelo Cisneiros",
     "numeroCelular": "(65) 3010-2015",
     "email": "naomi.camelo@gmail.com"
   },
   {
-    "id": 2,
     "nomeCompleto": "Fausto Cardoso Prado",
     "numeroCelular": "(83) 2678-1029",
     "email": "faustaocardoso@gmail.com"
   },
   {
-    "id": 3,
     "nomeCompleto": "Josué Vilela Vilanova",
     "numeroCelular": "(61) 3108-4874",
     "email": "josuevilela@hotmail.com"
   },
   {
-    "id": 4,
     "nomeCompleto": "Diogo Inês Boto",
     "numeroCelular": "(66) 3562-4572",
     "email": "diogoboto@gmail.com"
   },
   {
-    "id": 5,
     "nomeCompleto": "Wallace Vidal Pestana",
     "numeroCelular": "(82) 2113-7365",
     "email": "wallacevidal@hotmail.com"

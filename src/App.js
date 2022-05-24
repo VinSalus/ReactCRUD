@@ -10,7 +10,6 @@ import Alert from "react-bootstrap/Alert";
 const App = () => {
   //Define a variavel listagens tendo como estado inicial os dados do arquivo dados.json
   const [listagens, setlistagens] = useState(data);
-  const [contatoFoco, setContatoFoco] = useState(null)
 
   //Define um estado inicial para o formulário de envio com dados formatados espelhando o json
   const novo = () => ({
@@ -59,17 +58,18 @@ const App = () => {
 
   const eventoClickDeletar = (event) => {
     event.preventDefault();
-    const novasListagens = listagens.filter(listagem => listagem.id !== contatoFoco)
+
+    var novasListagens = [...listagens];
+    novasListagens.splice(editarIdLista, 1);
 
     setlistagens(novasListagens);
-    setContatoFoco(null)
-
     handleFechar();
   };
 
-  const eventoClickMostrarModalDeletar = (event, id) => {
+  const eventoClickMostrarModalDeletar = (event, listagem, i) => {
     event.preventDefault();
-    setContatoFoco(id)
+    setEditarIdLista(i);
+    setAddDadosFormulario(listagem);
     handleMostrar();
   };
 
@@ -157,9 +157,11 @@ const App = () => {
         <Modal.Body>
           {["danger"].map((variant) => (
             <Alert key={variant} variant={variant}>
-              Deseja excluir esse registro?
+              Deseja deletar o registro abaixo?<br></br>
+              
             </Alert>
           ))}
+          {addDadosFormulario.nomeCompleto}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleFechar}>
@@ -188,7 +190,7 @@ const App = () => {
                 listagem={listagem}
                 i={i}
                 eventoClickEditar={eventoClickEditar}
-                eventoClickMostrarModalDeletar={(e) => eventoClickMostrarModalDeletar(e, listagem.id)}
+                eventoClickMostrarModalDeletar={eventoClickMostrarModalDeletar}
                 key={listagem.id}
               />
             ))}
